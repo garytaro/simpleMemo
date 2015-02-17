@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--<string name="title_section1">Section 1</string>-->
+    <!--<string name="title_section2">Section 2</string>-->
+    <!--<string name="title_section3">Section 3</string>-->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+
+    <!--MainActivity-->
+    <string name="app_name">SimpleMemo</string>
+    <string name="action_setting">Setting</string>
+    <string name="action_add">Add</string>
+    <!--context_main-->
+    <string name="context_del">Delete</string>
+    <string name="msg_del">Deleted</string>
+
+    <!--SettingPrefActivity-->
+    <string name="title_sensor">Sensor Parameters</string>
+    <string name="title_pred">Pre-set Prediction Pattern</string>
+    <string name="dlg_pred_title">Choose Prediction</string>
+    <string name="flg_custom">Use Custom Prediction</string>
+
+    <string name="cat_sensor">Set Sensor Parameters</string>
+    <string name="cat_choose">Choose Prediction Pattern</string>
+    <string name="cat_custom">Set Custom Prediction</string>
+
+    <string name="pred_dir">Direction</string>
+    <string name="pred_bld">Blood Type</string>
+    <string name="pred_dlk">Drink</string>
+    <string name="pred_alc">Alcohol</string>
+    <string name="pred_cin">Coin</string>
+    <string name="pred_crd">Playing Cards</string>
+    <string name="pred_custom">Custom...</string>
+
+    <string name="pred_dir_value">上,右,下,左,斜め上,斜め下</string>
+    <string name="pred_bld_value">A型,B型,O型,AB型,クワガタ,歯型</string>
+    <string name="pred_dlk_value">コーヒー,紅茶,ウーロン茶,オレンジジュース,ココア,ハーブティー</string>
+    <string name="pred_alc_value">日本酒,焼酎,ワイン,ビール,ウィスキーかハイボール,カクテル</string>
+    <string name="pred_cin_value">500円,100円,50円,10円,5円,1円</string>
+    <string name="pred_crd_value">ダイヤ,クラブ,ハート,スペード,ジョーカー,ハートのA</string>
+    <string name="pred_custom_value">CustomPredictionValue</string>
+
+    <!--SettingSensorParamActivity-->
+    <string name="dlg_sensor_title">Choose Sensor Frequency</string>
+    <string name="title_sensor_freq">Choose Sensor Frequency</string>
+
+    <!--EditActivity-->
+    <string name="hint_title">Title</string>
+    <string name="hint_content">Content</string>
+    <!--menu_edit menu-->
+    <string name="action_delete">Delete</string>
+    <string name="action_save">Save</string>
+    <string name="action_sensorStart">Sensor Start</string>
+    <!--msg toast-->
+    <string name="msg_destruction">Deleted</string>
+    <string name="msg_save">Saved</string>
+
+    <!--AndroidManifest-->
+    <string name="editactivity_title">Edit</string>
+    <string name="chooseactivity_title">Choose Pattern</string>
+    <string name="settingprefactivity_title">Preferences</string>
+    <string name="setparamactivity_title">Sensor Parameters</string>
+    <!--<drawable name="actionbar_background">#225522</drawable>-->
+
+</resources>

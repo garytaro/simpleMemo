@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference
+        android:key="key_mv_num_sample"
+        android:maxLength="3"
+        android:title="Moving Average Samples(2~999)"
+        android:dialogTitle="Set Number of Sample (default:10)"
+        android:inputType="number"
+        android:defaultValue="10"
+        android:selectAllOnFocus="true"
+        />
+    <ListPreference
+        android:key="key_sensor_freq"
+        android:title="@string/title_sensor_freq"
+        android:dialogTitle="@string/dlg_sensor_title"
+        android:entries="@array/list_sensor_freq"
+        android:entryValues="@array/list_sensor_freq_val"
+        android:defaultValue="GAME"
+        />
+    <EditTextPreference
+        android:key="key_sensor_delay"
+        android:maxLength="3"
+        android:title="Delay of Sensor Start"
+        android:dialogTitle="Set Delay(sec)"
+        android:inputType="number"
+        android:defaultValue="5"
+        android:selectAllOnFocus="true"
+        />
+    <EditTextPreference
+        android:key="key_lr_max_degree"
+        android:maxLength="3"
+        android:title="LR Direction Max Degree"
+        android:dialogTitle="Set Max Degree (default:90)"
+        android:inputType="number"
+        android:defaultValue="90"
+        android:selectAllOnFocus="true"
+        />
+    <EditTextPreference
+        android:key="key_lr_min_degree"
+        android:maxLength="3"
+        android:title="LR Direction Min Degree"
+        android:dialogTitle="Set Min Degree (default:30)"
+        android:inputType="number"
+        android:defaultValue="30"
+        android:selectAllOnFocus="true"
+        />
+    <EditTextPreference
+        android:key="key_ud_max_degree"
+        android:maxLength="3"
+        android:title="UD Direction Max Degree"
+        android:dialogTitle="Set Max Degree (default:90)"
+        android:inputType="number"
+        android:defaultValue="90"
+        android:selectAllOnFocus="true"
+        />
+    <EditTextPreference
+        android:key="key_ud_min_degree"
+        android:maxLength="3"
+        android:title="UD Direction Min Degree"
+        android:dialogTitle="Set Min Degree (default:20)"
+        android:inputType="number"
+        android:defaultValue="20"
+        android:selectAllOnFocus="true"
+        />
+
+</PreferenceScreen>

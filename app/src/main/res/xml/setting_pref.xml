@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/cat_sensor">
+        <PreferenceScreen android:title="@string/title_sensor"
+            android:key="key_sensor_param">
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/cat_choose">
+        <ListPreference
+            android:key="key_preset_pattern"
+            android:title="@string/title_pred"
+            android:dialogTitle="@string/dlg_pred_title"
+            android:entries="@array/list_prediction"
+            android:entryValues="@array/list_prediction_val"
+            android:defaultValue="@string/pred_dir_value"
+            />
+<!--        <CheckBoxPreference
+            android:key="key_flg_custom"
+            android:title="@string/flg_custom"
+            android:defaultValue="false"
+            />-->
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/cat_custom">
+        <EditTextPreference
+            android:key="key_custom1"
+            android:maxLength="20"
+            android:title="Custom1"
+            android:dialogTitle="Edit Text"
+            android:inputType="text"
+            android:defaultValue="UP"
+            android:selectAllOnFocus="true"
+            />
+        <EditTextPreference
+            android:key="key_custom2"
+            android:maxLength="20"
+            android:title="Custom2"
+            android:dialogTitle="Edit Text"
+            android:inputType="text"
+            android:defaultValue="RIGHT"
+            android:selectAllOnFocus="true"
+            />
+        <EditTextPreference
+            android:key="key_custom3"
+            android:maxLength="20"
+            android:title="Custom3"
+            android:dialogTitle="Edit Text"
+            android:inputType="text"
+            android:defaultValue="DOWN"
+            android:selectAllOnFocus="true"
+            />
+        <EditTextPreference
+            android:key="key_custom4"
+            android:maxLength="20"
+            android:title="Custom4"
+            android:dialogTitle="Edit Text"
+            android:inputType="text"
+            android:defaultValue="LEFT"
+            android:selectAllOnFocus="true"
+            />
+        <EditTextPreference
+            android:key="key_custom5"
+            android:maxLength="20"
+            android:title="Custom5"
+            android:dialogTitle="Edit Text"
+            android:inputType="text"
+            android:defaultValue="VUP"
+            android:selectAllOnFocus="true"
+            />
+        <EditTextPreference
+            android:key="key_custom6"
+            android:maxLength="20"
+            android:title="Custom6"
+            android:dialogTitle="Edit Text"
+            android:inputType="text"
+            android:defaultValue="VDOWN"
+            android:selectAllOnFocus="true"
+            />
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="list_prediction">
+        <item>@string/pred_dir</item>
+        <item>@string/pred_bld</item>
+        <item>@string/pred_dlk</item>
+        <item>@string/pred_alc</item>
+        <item>@string/pred_cin</item>
+        <item>@string/pred_crd</item>
+        <item>@string/pred_custom</item>
+    </string-array>
+    <string-array name="list_prediction_val">
+        <item>@string/pred_dir_value</item>
+        <item>@string/pred_bld_value</item>
+        <item>@string/pred_dlk_value</item>
+        <item>@string/pred_alc_value</item>
+        <item>@string/pred_cin_value</item>
+        <item>@string/pred_crd_value</item>
+        <item>@string/pred_custom_value</item>
+    </string-array>
+    <string-array name="list_sensor_freq">
+        <item>FASTEST(not recommended)</item>
+        <item>GAME</item>
+        <item>UI</item>
+        <item>NORMAL</item>
+    </string-array>
+    <string-array name="list_sensor_freq_val">
+        <item>FASTEST</item>
+        <item>GAME</item>
+        <item>UI</item>
+        <item>NORMAL</item>
+    </string-array>
+</resources>

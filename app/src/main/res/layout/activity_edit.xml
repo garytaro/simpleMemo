@@ -1,0 +1,50 @@
+<!-- A DrawerLayout is intended to be used as the top-level content view using match_parent for both width and height to consume the full space available. -->
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools" android:id="@+id/drawer_layout"
+android:layout_width="match_parent" android:layout_height="match_parent"
+android:orientation="vertical"
+tools:context=".EditActivity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1" >
+
+        <EditText
+            android:id="@+id/eTxtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:hint="@string/hint_title"
+            android:textSize="22sp"
+            android:background="#ffdddddd"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:inputType="text" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/accent_material_dark" />
+
+        <EditText
+            android:id="@+id/eTxtContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/hint_content"
+            android:textSize="22sp"
+            android:gravity="start"
+            android:background="#ffdddddd"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="10dp"/>
+    </LinearLayout>
+
+    <FrameLayout android:id="@+id/container" android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <fragment android:id="@+id/navigation_drawer"
+        android:layout_width="@dimen/navigation_drawer_width" android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:name="com.taro.gary.simplememo.NavigationDrawerFragment"
+        tools:layout="@layout/fragment_navigation_drawer" />
+
+</android.support.v4.widget.DrawerLayout>
