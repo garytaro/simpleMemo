@@ -6,15 +6,8 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
 
 
 public class NavigationActivity extends ActionBarActivity
@@ -29,7 +22,6 @@ public class NavigationActivity extends ActionBarActivity
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
     protected CharSequence mTitle;
-    private String[] mPredictionSentence = {"up", "right", "down", "left", "vup", "vdown"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +39,6 @@ public class NavigationActivity extends ActionBarActivity
 
     public void onSectionAttached(int number) {
         String[] pred_sentence =  getResources().getStringArray(R.array.list_prediction_val);
-//        String[] pred_entry =  getResources().getStringArray(R.array.list_prediction);
-//        String[] pred_custom = SettingPrefActivity.PREF_KEY_CUSTOM;
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
         pref.edit().putString("key_preset_pattern", pred_sentence[number - 1]).apply();
     }
@@ -60,7 +50,6 @@ public class NavigationActivity extends ActionBarActivity
         actionBar.setTitle(mTitle);
     }
 */
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         if (!mNavigationDrawerFragment.isDrawerOpen()) {
