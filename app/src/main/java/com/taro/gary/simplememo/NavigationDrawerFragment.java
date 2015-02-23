@@ -11,6 +11,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -121,6 +122,7 @@ public class NavigationDrawerFragment extends Fragment {
         );
 
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        // TODO:entryの参照方法がSettingPrefActivityと異なる
         String[] list_prediction = getResources().getStringArray(R.array.list_prediction);
         String[] list_prediction_val = getResources().getStringArray(R.array.list_prediction_val);
 
@@ -128,11 +130,13 @@ public class NavigationDrawerFragment extends Fragment {
             // ListView用のアダプタにデータをセット
             Map<String, String> map = new HashMap<String, String>();
             map.put("list_prediction", list_prediction[i]);
-            if (i == list_prediction.length - 1) {
+            ArrayList<String> predList = Array2Pref.pref2array(pref, list_prediction[i]);
+
+            if (predList!=null) {
                 String predictionSentence = "";
-                for (int j=0; j < SettingPrefActivity.PREF_KEY_CUSTOM.length ; j++) {
-                    predictionSentence += pref.getString(SettingPrefActivity.PREF_KEY_CUSTOM[j], "default");
-                    if (j == SettingPrefActivity.PREF_KEY_CUSTOM.length - 1) continue;
+                for (int j = 0; j < predList.size(); j++) {
+                    predictionSentence += predList.get(j);
+                    if (j == predList.size() - 1) continue;
                     predictionSentence += ",";
                 }
                 map.put("list_prediction_val", predictionSentence);
@@ -153,7 +157,7 @@ public class NavigationDrawerFragment extends Fragment {
         String[] list_prediction_val = getResources().getStringArray(R.array.list_prediction_val);
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getActivity());
         String selectedPredVal = pref.getString(SettingPrefActivity.PREF_KEY_PRESET_PATTERN
-                , getString(R.string.pred_dir_value));
+                , getString(R.string.pred_case1_value));
         // 現在の設定値からアクティブを変更
         for (int i=0; i<list_prediction_val.length; i++) {
             if (selectedPredVal.equals(list_prediction_val[i])) mCurrentSelectedPosition = i;

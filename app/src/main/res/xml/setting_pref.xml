@@ -13,7 +13,7 @@
             android:dialogTitle="@string/dlg_pred_title"
             android:entries="@array/list_prediction"
             android:entryValues="@array/list_prediction_val"
-            android:defaultValue="@string/pred_dir_value"
+            android:defaultValue="@string/pred_case1_value"
             />
 <!--        <CheckBoxPreference
             android:key="key_flg_custom"

@@ -8,9 +8,19 @@ import android.preference.EditTextPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.util.Log;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by Shunya on 15/01/24.
@@ -53,6 +63,7 @@ public class SettingPrefActivity extends SettingSuperActivity {
                 }
             });
 
+            loadPredFromJson();
             // Summary を設定
             setSummaryFraction();
         }
@@ -79,24 +90,66 @@ public class SettingPrefActivity extends SettingSuperActivity {
             @Override
             public void onSharedPreferenceChanged(
                 SharedPreferences sharedPreferences, String key) {
-                setSummaryFraction();
+                if (key.equals("key_preset_pattern")){
+                    loadPredFromJson();
+                }
+                else{
+                    setSummaryFraction();
+                }
             }
         };
 
         // Fraction の Summary を設定
         private void setSummaryFraction() {
             ListPreference prefPresetPattern = (ListPreference) findPreference(PREF_KEY_PRESET_PATTERN);
-            // entryは取得できないのでvalueで判定
-            String predSentence = prefPresetPattern.getValue();
-            if (predSentence.equals(getString(R.string.pred_custom_value))) {
-                prefPresetPattern.setSummary(R.string.pred_custom);
-            } else {
-                prefPresetPattern.setSummary(predSentence);
-            }
 
+            // valueからentryのidを取得、entryを呼び出し
+            String predSentence = prefPresetPattern.getValue();
+            int listId = prefPresetPattern.findIndexOfValue(predSentence);
+            CharSequence[] entries = prefPresetPattern.getEntries();
+            String entry = (String)entries[listId];
+            prefPresetPattern.setSummary(entry);
+
+            ArrayList<String> predList = new ArrayList<>();
             for (int i = 0; i < PREF_KEY_CUSTOM.length; i++) {
                 setCustomPredSummaryFraction(PREF_KEY_CUSTOM[i]);
+                String predText = ((EditTextPreference)findPreference(PREF_KEY_CUSTOM[i])).getText();
+                predList.add(i, predText);
             }
+
+            SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getActivity());
+            // ArrayListをjsonに変換、シリアライズしてsharedpreferencesに書き込み
+            Array2Pref.array2pref(pref, entry, predList);
+        }
+
+        // 選択したcaseに対応するvalueをjsonから読み出す
+        private void loadPredFromJson(){
+            ListPreference prefPresetPattern = (ListPreference) findPreference(PREF_KEY_PRESET_PATTERN);
+            String predSentence = prefPresetPattern.getValue();
+            int listId = prefPresetPattern.findIndexOfValue(predSentence);
+            CharSequence[] entries = prefPresetPattern.getEntries();
+            String entry = (String)entries[listId];
+
+            SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getActivity());
+            ArrayList<String> predList = Array2Pref.pref2array(pref, entry);
+            if (predList==null){
+                String predChars = pref.getString(PREF_KEY_PRESET_PATTERN, "empty,empty,empty,empty,empty,empty");
+                String[] strAray = predChars.split(",");
+                for(int i=0; i<PREF_KEY_CUSTOM.length; i++) {
+                    ((EditTextPreference) findPreference(PREF_KEY_CUSTOM[i])).setText(strAray[i]);
+                }
+            }
+            else if (predList.size()==PREF_KEY_CUSTOM.length) {
+                for (int i = 0; i < PREF_KEY_CUSTOM.length; i++) {
+                    ((EditTextPreference) findPreference(PREF_KEY_CUSTOM[i])).setText(predList.get(i));
+                }
+            }
+            else{
+                for(int i=0; i<PREF_KEY_CUSTOM.length; i++) {
+                    ((EditTextPreference) findPreference(PREF_KEY_CUSTOM[i])).setText("empty");
+                }
+            }
+            pref.edit().putString("key_preset_entry", entry).apply();
         }
 
         private void setCustomPredSummaryFraction(String key){

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="list_prediction">
-        <item>@string/pred_dir</item>
-        <item>@string/pred_bld</item>
-        <item>@string/pred_dlk</item>
-        <item>@string/pred_alc</item>
-        <item>@string/pred_cin</item>
-        <item>@string/pred_crd</item>
-        <item>@string/pred_custom</item>
+        <item>@string/pred_case1</item>
+        <item>@string/pred_case2</item>
+        <item>@string/pred_case3</item>
+        <item>@string/pred_case4</item>
+        <item>@string/pred_case5</item>
+        <item>@string/pred_case6</item>
+        <item>@string/pred_case7</item>
     </string-array>
     <string-array name="list_prediction_val">
-        <item>@string/pred_dir_value</item>
-        <item>@string/pred_bld_value</item>
-        <item>@string/pred_dlk_value</item>
-        <item>@string/pred_alc_value</item>
-        <item>@string/pred_cin_value</item>
-        <item>@string/pred_crd_value</item>
-        <item>@string/pred_custom_value</item>
+        <item>@string/pred_case1_value</item>
+        <item>@string/pred_case2_value</item>
+        <item>@string/pred_case3_value</item>
+        <item>@string/pred_case4_value</item>
+        <item>@string/pred_case5_value</item>
+        <item>@string/pred_case6_value</item>
+        <item>@string/pred_case7_value</item>
     </string-array>
     <string-array name="list_sensor_freq">
         <item>FASTEST(not recommended)</item>

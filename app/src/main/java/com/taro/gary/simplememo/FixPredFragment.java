@@ -7,12 +7,15 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.preference.ListPreference;
+import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -295,19 +298,17 @@ public class FixPredFragment extends Fragment
 
     public void getPrefSetting(){
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        // チェックボックスで切り替える場合
-//        Boolean mIsCustomPred = pref.getBoolean(SettingPrefActivity.PREF_KEY_FLG_CUSTOM, false);
-        String predChars = pref.getString(SettingPrefActivity.PREF_KEY_PRESET_PATTERN, "up,right,down,left");
-        boolean isCustomPred = false;
-        if (predChars.equals(getString(R.string.pred_custom_value))) isCustomPred = true;
+        String predSentence = pref.getString("key_preset_pattern","empty,empty,empty,empty,empty,empty");
+        String predEntry = pref.getString("key_preset_entry","Direction");
 
-        if(isCustomPred){
+        ArrayList<String> predList = Array2Pref.pref2array(pref, predEntry);
+        if(predList!=null){
             for (int i=0; i < mPredictionSentence.length ; i++) {
-                mPredictionSentence[i] = pref.getString(SettingPrefActivity.PREF_KEY_CUSTOM[i], "default");
+                mPredictionSentence[i] = predList.get(i);
             }
         }
         else{
-            String[] strAray = predChars.split(",");
+            String[] strAray = predSentence.split(",");
             if(strAray.length!=mPredictionSentence.length) {
                 Toast.makeText(getActivity(),"Invalid Pre-set Prediction",Toast.LENGTH_SHORT).show();
                 return;

@@ -38,9 +38,11 @@ public class NavigationActivity extends ActionBarActivity
     }
 
     public void onSectionAttached(int number) {
-        String[] pred_sentence =  getResources().getStringArray(R.array.list_prediction_val);
+        String[] predSentence =  getResources().getStringArray(R.array.list_prediction_val);
+        String[] predEntry =  getResources().getStringArray(R.array.list_prediction);
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
-        pref.edit().putString("key_preset_pattern", pred_sentence[number - 1]).apply();
+        pref.edit().putString("key_preset_pattern", predSentence[number - 1]).apply();
+        pref.edit().putString("key_preset_entry", predEntry[number - 1]).apply();
     }
 /*
     public void restoreActionBar() {

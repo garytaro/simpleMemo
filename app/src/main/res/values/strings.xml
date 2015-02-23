@@ -19,7 +19,7 @@
 
     <!--SettingPrefActivity-->
     <string name="title_sensor">Sensor Parameters</string>
-    <string name="title_pred">Pre-set Prediction Pattern</string>
+    <string name="title_pred">Prediction Pattern</string>
     <string name="dlg_pred_title">Choose Prediction</string>
     <string name="flg_custom">Use Custom Prediction</string>
 
@@ -27,21 +27,21 @@
     <string name="cat_choose">Choose Prediction Pattern</string>
     <string name="cat_custom">Set Custom Prediction</string>
 
-    <string name="pred_dir">Direction</string>
-    <string name="pred_bld">Blood Type</string>
-    <string name="pred_dlk">Drink</string>
-    <string name="pred_alc">Alcohol</string>
-    <string name="pred_cin">Coin</string>
-    <string name="pred_crd">Playing Cards</string>
-    <string name="pred_custom">Custom...</string>
+    <string name="pred_case1">Direction</string>
+    <string name="pred_case2">Blood Type</string>
+    <string name="pred_case3">Drink</string>
+    <string name="pred_case4">Alcohol</string>
+    <string name="pred_case5">Coin</string>
+    <string name="pred_case6">Playing Cards</string>
+    <string name="pred_case7">Custom</string>
 
-    <string name="pred_dir_value">上,右,下,左,斜め上,斜め下</string>
-    <string name="pred_bld_value">A型,B型,O型,AB型,クワガタ,歯型</string>
-    <string name="pred_dlk_value">コーヒー,紅茶,ウーロン茶,オレンジジュース,ココア,ハーブティー</string>
-    <string name="pred_alc_value">日本酒,焼酎,ワイン,ビール,ウィスキーかハイボール,カクテル</string>
-    <string name="pred_cin_value">500円,100円,50円,10円,5円,1円</string>
-    <string name="pred_crd_value">ダイヤ,クラブ,ハート,スペード,ジョーカー,ハートのA</string>
-    <string name="pred_custom_value">CustomPredictionValue</string>
+    <string name="pred_case1_value">上,右,下,左,斜め上,斜め下</string>
+    <string name="pred_case2_value">A型,B型,O型,AB型,クワガタ,歯型</string>
+    <string name="pred_case3_value">コーヒー,紅茶,ウーロン茶,オレンジジュース,ココア,ハーブティー</string>
+    <string name="pred_case4_value">日本酒,焼酎,ワイン,ビール,ウィスキーかハイボール,カクテル</string>
+    <string name="pred_case5_value">500円,100円,50円,10円,5円,1円</string>
+    <string name="pred_case6_value">♢,♧,♡,♤,♡A,Joker</string>
+    <string name="pred_case7_value">a,b,c,d,e,f</string>
 
     <!--SettingSensorParamActivity-->
     <string name="dlg_sensor_title">Choose Sensor Frequency</string>
@@ -63,6 +63,5 @@
     <string name="chooseactivity_title">Choose Pattern</string>
     <string name="settingprefactivity_title">Preferences</string>
     <string name="setparamactivity_title">Sensor Parameters</string>
-    <!--<drawable name="actionbar_background">#225522</drawable>-->
 
 </resources>
