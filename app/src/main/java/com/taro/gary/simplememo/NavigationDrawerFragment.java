@@ -122,7 +122,6 @@ public class NavigationDrawerFragment extends Fragment {
         );
 
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        // TODO:entryの参照方法がSettingPrefActivityと異なる
         String[] list_prediction = getResources().getStringArray(R.array.list_prediction);
         String[] list_prediction_val = getResources().getStringArray(R.array.list_prediction_val);
 

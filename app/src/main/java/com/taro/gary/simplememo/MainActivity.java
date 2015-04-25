@@ -31,7 +31,6 @@ public class MainActivity extends NavigationActivity {
 
         getFragmentManager().beginTransaction()
                 .add(R.id.container, new FileListFragment()).commit();
-
     }
 
     @Override
