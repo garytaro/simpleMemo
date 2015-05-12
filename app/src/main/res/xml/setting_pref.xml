@@ -9,7 +9,6 @@
     <PreferenceCategory android:title="@string/cat_choose">
         <ListPreference
             android:key="key_preset_pattern"
-            android:title="@string/title_pred"
             android:dialogTitle="@string/dlg_pred_title"
             android:entries="@array/list_prediction"
             android:entryValues="@array/list_prediction_val"

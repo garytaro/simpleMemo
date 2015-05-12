@@ -108,7 +108,8 @@ public class SettingPrefActivity extends SettingSuperActivity {
             int listId = prefPresetPattern.findIndexOfValue(predSentence);
             CharSequence[] entries = prefPresetPattern.getEntries();
             String entry = (String)entries[listId];
-            prefPresetPattern.setSummary(entry);
+//            prefPresetPattern.setSummary(entry);
+            prefPresetPattern.setTitle(entry);
 
             ArrayList<String> predList = new ArrayList<>();
             for (int i = 0; i < PREF_KEY_CUSTOM.length; i++) {
@@ -154,7 +155,7 @@ public class SettingPrefActivity extends SettingSuperActivity {
 
         private void setCustomPredSummaryFraction(String key){
             EditTextPreference prefCustom = (EditTextPreference)findPreference(key);
-            prefCustom.setSummary(prefCustom.getText());
+            prefCustom.setTitle(prefCustom.getText());
         }
 
     }
